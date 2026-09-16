@@ -1,0 +1,1 @@
+import{o as e}from"./useStore-CP8wJgJA.js";import{p as t,t as n}from"./index-CTcyuMTH.js";import{t as r}from"./genres-page-CeE3jPhR.js";var i=e();function a(){let{id:e}=n.useParams();return t(e)?(0,i.jsx)(r,{id:e}):null}export{a as component};

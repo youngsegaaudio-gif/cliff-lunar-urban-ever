@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/studio",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 4893,
+      "bodyTextHash": "464823a243d36511e8190c3cbcecba4046452fa8e51eb7686c61a6d83ae58cf3",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio HOME MET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-keys.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 3330,
+      "bodyTextHash": "36b683ab179b2bb41988b6b16fde7c2b7d963f0f4cbd6a742d309150a32c6d58",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio Buy $29 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-keys-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/studio-keys.json"
+}

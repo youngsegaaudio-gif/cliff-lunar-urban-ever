@@ -1,0 +1,1 @@
+import{n as e}from"./legal-pages-Dzpyb9lc.js";var t=e;export{t as component};

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "PHRASEFORM — Hardstyle arrangement studio",
+      "hasCanvas": false,
+      "bodyTextLen": 2399,
+      "bodyTextHash": "8e5d1b2b24e316f42656eb7eb918761ac837b2a849a848186304955360f2429b",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio HOME MET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "PHRASEFORM — Hardstyle arrangement studio",
+      "hasCanvas": false,
+      "bodyTextLen": 2359,
+      "bodyTextHash": "03416ce1254853ca964b2f851c1fb1f9713db4f3bae3a2cafed12b50c13a0a92",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio Buy $29 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json"
+}

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/studio",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 4842,
+      "bodyTextHash": "5d05d3eb37166c1b1656a47d7cdece1cb3162de2f6fc307d8118ea420b7119ce",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio HOME MET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-daw.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 3279,
+      "bodyTextHash": "8f0d8b67f010a61eba0b18f3fde27e6a3d3f4d556799491c139c16fad5a0c9e5",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio Buy $29 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-daw-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/studio-daw.json"
+}
