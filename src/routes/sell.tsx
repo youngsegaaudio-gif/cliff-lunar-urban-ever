@@ -1,12 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SellDesk } from "@/components/sell-desk";
-import { pageHead } from "@/lib/page-head";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/sell")({
-  component: SellDesk,
-  head: () =>
-    pageHead(
-      "Seller desk · PHRASEFORM",
-      "Set price, paste a checkout link, mint license keys, and fulfill Phraseform Pro orders.",
-    ),
+  beforeLoad: () => {
+    throw redirect({ to: "/" });
+  },
 });

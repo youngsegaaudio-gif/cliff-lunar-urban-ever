@@ -7,6 +7,6 @@ export const Route = createFileRoute("/privacy")({
   head: () =>
     pageHead(
       "Privacy · PHRASEFORM",
-      "No accounts. Maps and license keys stay in this browser. Payments are handled by the seller’s checkout.",
+      "No accounts. Maps stay in this browser. Phraseform does not run ads or checkout.",
     ),
 });

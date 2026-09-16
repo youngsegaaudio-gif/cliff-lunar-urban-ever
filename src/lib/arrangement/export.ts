@@ -2,10 +2,7 @@ import { GENRES, KIND_META, LANE_META, barsToTime } from "./genres";
 import { totalBars } from "./generator";
 import { LANE_IDS, type Track } from "./types";
 
-export function studioSheet(
-  track: Track,
-  opts?: { pro?: boolean; licensee?: string },
-): string {
+export function studioSheet(track: Track): string {
   const g = GENRES[track.genre];
   const bars = totalBars(track);
   const lines: string[] = [];
@@ -13,13 +10,7 @@ export function studioSheet(
   lines.push(`${g.name}  ·  ${track.bpm} BPM  ·  ${track.key}  ·  ${bars} bars  ·  ${barsToTime(bars, track.bpm)}`);
   if (track.inspiredBy) lines.push(`Bones stolen from ${track.inspiredBy} (form only — write your own notes)`);
   else lines.push(`Freehand — not chasing one record`);
-  if (opts?.pro) {
-    lines.push(
-      `PHRASEFORM Pro${opts.licensee ? `  ·  licensed to ${opts.licensee}` : ""}`,
-    );
-  } else {
-    lines.push("PHRASEFORM Free  ·  buy Pro for a clean studio sheet");
-  }
+  lines.push("PHRASEFORM  ·  public studio sheet");
   lines.push("");
   lines.push(`Kick: ${g.kick}`);
   lines.push(`Groove: ${g.groove}`);

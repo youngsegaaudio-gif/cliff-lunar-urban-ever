@@ -14,9 +14,10 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       {
         name: "description",
-        content: "Hardstyle arrangement studio — phrase maps, genre kits, and a one-time Pro license.",
+        content: "Public hardstyle arrangement studio — phrase maps, genre kits, and a DAW-style arrange. Free to use.",
       },
       { name: "theme-color", content: "#0b0b0c" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

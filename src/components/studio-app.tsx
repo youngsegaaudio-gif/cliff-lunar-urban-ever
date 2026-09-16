@@ -6,7 +6,6 @@ import { PhraseDetail } from "@/components/phrase-detail";
 import { SiteNav } from "@/components/site-nav";
 import { SoundPanel } from "@/components/sound-panel";
 import { Timeline } from "@/components/timeline";
-import { UnlockDialog } from "@/components/unlock-dialog";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -19,7 +18,6 @@ import { howToBuildTrack, suggestNext } from "@/lib/arrangement/suggestions";
 import type { EnergyPreset, GenreId } from "@/lib/arrangement/types";
 import { cn } from "@/lib/utils";
 import { useArranger } from "@/store/arranger";
-import { useCommerce } from "@/store/commerce";
 
 export function StudioApp() {
   const track = useArranger((s) => s.track);
@@ -34,13 +32,11 @@ export function StudioApp() {
     void ready.then(() => {
       if (search.genre) useArranger.getState().setGenre(search.genre);
     });
-    void useCommerce.persist.rehydrate();
   }, [search.genre]);
 
   return (
     <div className="flex min-h-dvh flex-col overflow-x-hidden bg-bg text-fg">
       <SiteNav active="studio" />
-      <UnlockDialog />
       <div id="content" className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden">
       <div className="border-b border-border px-4 py-2 md:px-6">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2">
@@ -326,15 +322,8 @@ function LibraryMenu() {
   const saveLibrary = useArranger((s) => s.saveLibrary);
   const loadLibrary = useArranger((s) => s.loadLibrary);
   const removeLibrary = useArranger((s) => s.removeLibrary);
-  const pro = useCommerce((s) => s.isPro());
-  const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
 
   const save = () => {
-    if (!pro) {
-      setUnlockOpen(true);
-      setOpen(false);
-      return;
-    }
     saveLibrary();
     toast.success("Saved to library");
     setOpen(false);
@@ -355,7 +344,7 @@ function LibraryMenu() {
             Save this arrangement
           </button>
           {library.length === 0 ? (
-            <p className="px-3 py-2 text-xs text-muted">Empty. Pro keeps a named shelf of maps.</p>
+            <p className="px-3 py-2 text-xs text-muted">Empty. Save a map to keep it on this browser.</p>
           ) : (
             library.map((item) => (
               <div key={item.id} className="flex items-center gap-1 px-1">
@@ -391,10 +380,7 @@ function LibraryMenu() {
 function ExportMenu() {
   const [open, setOpen] = useState(false);
   const track = useArranger((s) => s.track);
-  const pro = useCommerce((s) => s.isPro());
-  const licensee = useCommerce((s) => s.licensee);
-  const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
-  const sheet = () => studioSheet(track, { pro, licensee });
+  const sheet = () => studioSheet(track);
 
   const copy = async (text: string, label: string) => {
     try {
@@ -417,15 +403,6 @@ function ExportMenu() {
     setOpen(false);
   };
 
-  const needPro = (fn: () => void) => {
-    if (!pro) {
-      setUnlockOpen(true);
-      setOpen(false);
-      return;
-    }
-    fn();
-  };
-
   return (
     <div className="relative">
       <Button variant="outline" size="sm" onClick={() => setOpen((v) => !v)}>
@@ -436,29 +413,25 @@ function ExportMenu() {
           <button
             type="button"
             className="block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
-            onClick={() => copy(sheet(), pro ? "studio sheet" : "watermarked sheet")}
+            onClick={() => copy(sheet(), "studio sheet")}
           >
             Copy studio sheet
           </button>
           <button
             type="button"
             className="block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
-            onClick={() =>
-              needPro(() => download(sheet(), `${slug(track.title)}.txt`, "text/plain"))
-            }
+            onClick={() => download(sheet(), `${slug(track.title)}.txt`, "text/plain")}
           >
-            Download .txt{pro ? "" : " · Pro"}
+            Download .txt
           </button>
           <button
             type="button"
             className="block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
             onClick={() =>
-              needPro(() =>
-                download(jsonSheet(track), `${slug(track.title)}.json`, "application/json"),
-              )
+              download(jsonSheet(track), `${slug(track.title)}.json`, "application/json")
             }
           >
-            Download JSON{pro ? "" : " · Pro"}
+            Download JSON
           </button>
         </div>
       ) : null}

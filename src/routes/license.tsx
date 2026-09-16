@@ -7,6 +7,6 @@ export const Route = createFileRoute("/license")({
   head: () =>
     pageHead(
       "License · PHRASEFORM",
-      "Single-producer license for Phraseform Pro. Arrangements are ideas — the music you write is yours.",
+      "Phraseform is a public studio. Free to use. The music you write from a map is yours.",
     ),
 });

@@ -3,40 +3,26 @@ import { PhraseMapPreview } from "@/components/phrase-map-preview";
 import { PageKicker, SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { GENRE_LIST } from "@/lib/arrangement/genres";
-import { formatMoney } from "@/lib/license";
-import { useCommerce } from "@/store/commerce";
 
 export function LandingPage() {
-  const price = useCommerce((s) => s.price);
-  const currency = useCommerce((s) => s.currency);
-  const pro = useCommerce((s) => Boolean(s.licenseKey));
-  const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
-  const money = formatMoney(price, currency);
-
   return (
     <SiteShell active="home" width="wide">
-      <PageKicker>Hardstyle arrangement studio</PageKicker>
+      <PageKicker>Public hardstyle arrangement studio</PageKicker>
       <h1 className="mt-3 max-w-3xl font-display text-5xl uppercase leading-[0.95] tracking-wide md:text-7xl">
         Write the map before you write the kick
       </h1>
       <p className="mt-5 max-w-xl text-base text-pretty text-muted md:text-lg">
         Most maps steal the bones from a real record — Imaginary, FTS, TOO COLD — then you write
         your own notes. Looks like a DAW arrange window: 4–8 bar intros, then 16s and 32s, with
-        what actually sits on kick, reverse bass, leads, and vocals.
+        what actually sits on kick, reverse bass, leads, and vocals. Free. No account.
       </p>
       <div className="mt-8 flex flex-wrap gap-2">
         <Button asChild size="lg">
           <Link to="/studio">Open the studio</Link>
         </Button>
-        {pro ? (
-          <Button asChild variant="secondary" size="lg">
-            <Link to="/pricing">You're on Pro</Link>
-          </Button>
-        ) : (
-          <Button variant="secondary" size="lg" onClick={() => setUnlockOpen(true)}>
-            Buy Pro · {money}
-          </Button>
-        )}
+        <Button asChild variant="secondary" size="lg">
+          <Link to="/method">How it works</Link>
+        </Button>
       </div>
 
       <div className="mt-12">
@@ -92,15 +78,15 @@ export function LandingPage() {
 
       <section className="mt-14 rounded-xl bg-surface p-6 ring-1 ring-border md:flex md:items-center md:justify-between md:gap-8">
         <div>
-          <h2 className="font-display text-3xl uppercase tracking-wide">Pro is a one-time license</h2>
+          <h2 className="font-display text-3xl uppercase tracking-wide">Public. No paywall.</h2>
           <p className="mt-2 max-w-md text-sm text-pretty text-muted">
-            Free runs the whole studio. Pro removes the watermark, unlocks JSON backups, and keeps a
-            library of maps. {money}.
+            Generate maps, save a library in this browser, export a clean studio sheet. The music
+            you write from it is yours.
           </p>
         </div>
         <div className="mt-4 flex shrink-0 flex-col gap-2 md:mt-0">
           <Button asChild>
-            <Link to="/pricing">See pricing</Link>
+            <Link to="/studio">Open the studio</Link>
           </Button>
           <Button asChild variant="secondary">
             <Link to="/method">Read the method</Link>
