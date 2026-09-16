@@ -1,14 +1,13 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { o as require_jsx_runtime, r as Slot, s as require_react } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { R as notFound, _ as Link, f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { F as redirect, _ as Link, f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, y as useRouter, z as notFound } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as TriangleAlert, o as Menu, t as X } from "../_libs/lucide-react.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-import { a as DialogPortal, i as DialogOverlay, n as DialogClose, o as DialogTitle, r as DialogContent$1, s as DialogTrigger, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
-import { n as create, t as persist } from "../_libs/zustand.mjs";
-import { n as toast, t as Toaster } from "../_libs/sonner.mjs";
+import { a as DialogPortal, i as DialogOverlay, n as DialogClose, o as DialogTitle, r as DialogContent, s as DialogTrigger, t as Dialog } from "../_libs/@radix-ui/react-dialog+[...].mjs";
+import { t as Toaster } from "../_libs/sonner.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DDApkDmv.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-D9gwthdb.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -32,50 +31,40 @@ function SiteFooter() {
 					children: "Phraseform"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-2 max-w-xs text-sm text-pretty text-muted",
-					children: "Phrase maps for hardstyle, taken from hundreds of records. Kick, reverse bass, leads, and vocals — written on a 4-bar DAW grid."
+					children: "Public hardstyle phrase maps. Kick, reverse bass, leads, and vocals on a 4-bar DAW grid. Free to use."
 				})] }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
-					title: "Product",
+					title: "Studio",
 					links: [
 						{
 							to: "/studio",
-							label: "Studio"
-						},
-						{
-							to: "/pricing",
-							label: "Pricing"
+							label: "Open studio"
 						},
 						{
 							to: "/genres",
 							label: "Genre kits"
+						},
+						{
+							to: "/sound",
+							label: "Kick / Serum / mix"
 						}
 					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
 					title: "Learn",
-					links: [
-						{
-							to: "/method",
-							label: "Method"
-						},
-						{
-							to: "/sound",
-							label: "Kick / Serum / mix"
-						},
-						{
-							to: "/license",
-							label: "License"
-						}
-					]
+					links: [{
+						to: "/method",
+						label: "Method"
+					}, {
+						to: "/license",
+						label: "Use"
+					}]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
 					title: "Site",
 					links: [{
 						to: "/privacy",
 						label: "Privacy"
-					}, {
-						to: "/sell",
-						label: "Seller desk"
 					}]
 				})
 			]
@@ -83,7 +72,7 @@ function SiteFooter() {
 			className: "border-t border-border",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-subtle md:px-6",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "© 2026 Phraseform. Arrangements are ideas. The track is yours." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "One producer, one license." })]
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "© 2026 Phraseform. Public tool. Arrangements are ideas. The track is yours." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "No paywall. No account." })]
 			})
 		})]
 	});
@@ -137,10 +126,10 @@ var Button = import_react.forwardRef(({ className, variant, size, asChild = fals
 	});
 });
 Button.displayName = "Button";
-var Sheet = Dialog$1;
+var Sheet = Dialog;
 var SheetTrigger = DialogTrigger;
 function SheetContent({ className, children, side = "right", title }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, { className: "fixed inset-0 z-50 bg-bg/70 data-[state=open]:animate-in data-[state=closed]:animate-out" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent$1, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, { className: "fixed inset-0 z-50 bg-bg/70 data-[state=open]:animate-in data-[state=closed]:animate-out" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
 		className: cn("fixed z-50 flex flex-col bg-surface text-fg shadow-xl outline-none", side === "right" && "inset-y-0 right-0 h-full w-full max-w-md border-l border-border", side === "bottom" && "inset-x-0 bottom-0 max-h-[85vh] rounded-t-xl border-t border-border", className),
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "flex items-center justify-between border-b border-border px-4 py-3",
@@ -160,108 +149,6 @@ function SheetContent({ className, children, side = "right", title }) {
 		})]
 	})] });
 }
-var ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-var SALT = "PHRASEFORM-STUDIO-PRO";
-function fnv(text) {
-	let h = 2166136261;
-	for (let i = 0; i < text.length; i++) {
-		h ^= text.charCodeAt(i);
-		h = Math.imul(h, 16777619);
-	}
-	return h >>> 0;
-}
-function encode4(n) {
-	let x = n;
-	let out = "";
-	for (let i = 0; i < 4; i++) {
-		out = ALPHABET[x % 32] + out;
-		x = Math.floor(x / 32);
-	}
-	return out;
-}
-function random4() {
-	const bytes = /* @__PURE__ */ new Uint8Array(4);
-	crypto.getRandomValues(bytes);
-	return encode4(bytes[0] << 24 | bytes[1] << 16 | bytes[2] << 8 | bytes[3]);
-}
-function mintLicenseKey() {
-	const a = random4();
-	const b = random4();
-	return `PF-${a}-${b}-${encode4(fnv(`${a}${b}${SALT}`))}`;
-}
-function normalizeKey(raw) {
-	return raw.toUpperCase().replace(/[^A-Z0-9]/g, "");
-}
-function isValidLicenseKey(raw) {
-	const compact = normalizeKey(raw);
-	if (!compact.startsWith("PF") || compact.length !== 14) return false;
-	const body = compact.slice(2, 10);
-	const check = compact.slice(10);
-	return encode4(fnv(`${body.slice(0, 4)}${body.slice(4)}${SALT}`)) === check;
-}
-function formatKey(raw) {
-	const compact = normalizeKey(raw);
-	if (compact.length !== 14) return raw.trim().toUpperCase();
-	return `${compact.slice(0, 2)}-${compact.slice(2, 6)}-${compact.slice(6, 10)}-${compact.slice(10)}`;
-}
-function formatMoney(amount, currency) {
-	try {
-		return new Intl.NumberFormat("en-AU", {
-			style: "currency",
-			currency,
-			maximumFractionDigits: amount % 1 === 0 ? 0 : 2
-		}).format(amount);
-	} catch {
-		return `${currency} ${amount}`;
-	}
-}
-var LICENSE_TERMS = [
-	"One producer, one license. Use it on as many of your own machines as you need.",
-	"You may use PHRASEFORM on original tracks, client work, and ghost production.",
-	"Do not share, resell, or publish the license key. Do not wrap the generator as your own product.",
-	"The arrangements are ideas — the music you write from them is yours."
-];
-var useCommerce = create()(persist((set, get) => ({
-	price: 29,
-	currency: "AUD",
-	paymentUrl: "",
-	supportNote: "",
-	licensee: "",
-	licenseKey: null,
-	issued: [],
-	unlockOpen: false,
-	isPro: () => Boolean(get().licenseKey && isValidLicenseKey(get().licenseKey)),
-	setShop: (patch) => set(patch),
-	unlock: (key, licensee) => {
-		if (!isValidLicenseKey(key)) return false;
-		set({
-			licenseKey: formatKey(key),
-			licensee: (licensee ?? get().licensee).trim(),
-			unlockOpen: false
-		});
-		return true;
-	},
-	lock: () => set({ licenseKey: null }),
-	mint: (count, note) => {
-		const batch = Array.from({ length: Math.min(20, Math.max(1, count)) }, () => ({
-			key: mintLicenseKey(),
-			createdAt: (/* @__PURE__ */ new Date()).toISOString(),
-			note: note?.trim() || "",
-			sent: false
-		}));
-		set({ issued: [...batch, ...get().issued].slice(0, 200) });
-		return batch;
-	},
-	markSent: (key) => set({ issued: get().issued.map((k) => k.key === key ? {
-		...k,
-		sent: true
-	} : k) }),
-	setUnlockOpen: (open) => set({ unlockOpen: open }),
-	setLicensee: (name) => set({ licensee: name })
-}), {
-	name: "phraseform-shop",
-	skipHydration: true
-}));
 var LINKS = [
 	{
 		to: "/",
@@ -284,21 +171,12 @@ var LINKS = [
 		label: "Genres"
 	},
 	{
-		to: "/pricing",
-		id: "pricing",
-		label: "Pricing"
-	},
-	{
 		to: "/studio",
 		id: "studio",
 		label: "Studio"
 	}
 ];
 function SiteNav({ active }) {
-	const pro = useCommerce((s) => Boolean(s.licenseKey));
-	const price = useCommerce((s) => s.price);
-	const currency = useCommerce((s) => s.currency);
-	const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 		className: "sticky top-0 z-40 border-b border-border bg-bg/95",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
@@ -327,13 +205,14 @@ function SiteNav({ active }) {
 						on: active === l.id
 					}, l.to))
 				}),
-				pro ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "rounded-md bg-accent px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-fg",
-					children: "Pro"
-				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+					asChild: true,
 					size: "sm",
-					onClick: () => setUnlockOpen(true),
-					children: ["Buy ", formatMoney(price, currency)]
+					className: "hidden sm:inline-flex",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/studio",
+						children: "Open studio"
+					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sheet, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTrigger, {
 					asChild: true,
@@ -367,136 +246,11 @@ function NavItem({ to, label, on, block }) {
 		children: label
 	});
 }
-var Dialog = Dialog$1;
-function DialogContent({ title, children, className }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, { className: "fixed inset-0 z-50 bg-bg/70" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent$1, {
-		className: cn("fixed top-1/2 left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-surface p-4 text-fg shadow-xl outline-none ring-1 ring-border", className),
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mb-3 flex items-center justify-between gap-3",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
-				className: "font-display text-lg uppercase tracking-wide",
-				children: title
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogClose, {
-				className: "inline-flex size-11 items-center justify-center text-muted hover:text-fg",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "sr-only",
-					children: "Close"
-				})]
-			})]
-		}), children]
-	})] });
-}
-function Input({ className, ...props }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-		className: cn("h-11 w-full rounded-md bg-surface-2 px-3 text-sm text-fg outline-none ring-1 ring-border placeholder:text-subtle focus-visible:ring-2 focus-visible:ring-fg/40", className),
-		...props
-	});
-}
-function UnlockDialog() {
-	const open = useCommerce((s) => s.unlockOpen);
-	const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
-	const unlock = useCommerce((s) => s.unlock);
-	const price = useCommerce((s) => s.price);
-	const currency = useCommerce((s) => s.currency);
-	const paymentUrl = useCommerce((s) => s.paymentUrl);
-	const supportNote = useCommerce((s) => s.supportNote);
-	const savedName = useCommerce((s) => s.licensee);
-	const [key, setKey] = (0, import_react.useState)("");
-	const [name, setName] = (0, import_react.useState)(savedName);
-	(0, import_react.useEffect)(() => {
-		useCommerce.persist.rehydrate();
-	}, []);
-	const pay = () => {
-		if (!paymentUrl) {
-			toast.error("Payment link is not set yet. Open Sell and paste your PayPal or Gumroad URL.");
-			return;
-		}
-		window.open(paymentUrl, "_blank", "noopener,noreferrer");
-	};
-	const submit = () => {
-		if (unlock(key, name)) {
-			toast.success("Pro unlocked on this device");
-			setKey("");
-		} else toast.error("That key is not valid");
-	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
-		open,
-		onOpenChange: setUnlockOpen,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
-			title: "Phraseform Pro",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-					className: "text-sm text-pretty text-muted",
-					children: [
-						"One-time license. ",
-						formatMoney(price, currency),
-						". Clean studio-sheet export, JSON project files, and a saved arrangement library."
-					]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-4 flex flex-col gap-2",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-							onClick: pay,
-							disabled: !paymentUrl,
-							children: ["Pay ", formatMoney(price, currency)]
-						}),
-						!paymentUrl ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-pretty text-muted",
-							children: "The seller has not pasted a checkout link yet. They can do that on the Sell page."
-						}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-pretty text-muted",
-							children: "Pay, then paste the license key they send you."
-						}),
-						supportNote ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-pretty text-muted",
-							children: supportNote
-						}) : null
-					]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-4 flex flex-col gap-2",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
-							className: "font-mono text-[10px] uppercase tracking-wider text-muted",
-							children: ["Licensed to", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-								className: "mt-1",
-								value: name,
-								onChange: (e) => setName(e.target.value),
-								placeholder: "Your name or alias"
-							})]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
-							className: "font-mono text-[10px] uppercase tracking-wider text-muted",
-							children: ["License key", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-								className: "mt-1 font-mono uppercase",
-								value: key,
-								onChange: (e) => setKey(e.target.value),
-								placeholder: "PF-XXXX-XXXX-XXXX",
-								autoCapitalize: "characters"
-							})]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							variant: "secondary",
-							onClick: submit,
-							children: "Unlock this device"
-						})
-					]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-					className: "mt-4 space-y-1 text-[11px] text-pretty text-subtle",
-					children: LICENSE_TERMS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: t }, t))
-				})
-			]
-		})
-	});
-}
 function SiteShell({ active, children, width = "prose" }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "flex min-h-dvh flex-col bg-bg text-fg",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteNav, { active }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(UnlockDialog, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
 				id: "content",
 				className: cn("mx-auto w-full flex-1 px-4 py-10 md:px-6 md:py-14", width === "wide" ? "max-w-6xl" : "max-w-3xl"),
@@ -841,7 +595,7 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var styles_default = "/assets/styles-CkCchcGG.css";
+var styles_default = "/assets/styles-CDEKOeeB.css";
 var APP_NAME = "PHRASEFORM";
 var Route$11 = createRootRoute({
 	head: () => ({
@@ -854,11 +608,15 @@ var Route$11 = createRootRoute({
 			{ title: APP_NAME },
 			{
 				name: "description",
-				content: "Hardstyle arrangement studio — phrase maps, genre kits, and a one-time Pro license."
+				content: "Public hardstyle arrangement studio — phrase maps, genre kits, and a DAW-style arrange. Free to use."
 			},
 			{
 				name: "theme-color",
 				content: "#0b0b0c"
+			},
+			{
+				name: "robots",
+				content: "index, follow"
 			}
 		],
 		links: [
@@ -919,39 +677,35 @@ function pageHead(title, description) {
 		content: description
 	}] };
 }
-var $$splitComponentImporter$10 = () => import("./routes-Dw3947tx.mjs");
+var $$splitComponentImporter$8 = () => import("./routes-Dm17bv5w.mjs");
 var Route$10 = createFileRoute("/")({
-	component: lazyRouteComponent($$splitComponentImporter$10, "component"),
+	component: lazyRouteComponent($$splitComponentImporter$8, "component"),
 	head: () => pageHead("PHRASEFORM — Hardstyle arrangement studio", "Phrase maps from real hardstyle records. DAW-style arrange: 4–8 bar intros, then 16s and 32s.")
 });
-var $$splitComponentImporter$9 = () => import("./genres-P3cCqMpW.mjs");
-var Route$9 = createFileRoute("/genres")({ component: lazyRouteComponent($$splitComponentImporter$9, "component") });
-var $$splitComponentImporter$8 = () => import("./license-C5O0AB8_.mjs");
+var $$splitComponentImporter$7 = () => import("./genres-P3cCqMpW.mjs");
+var Route$9 = createFileRoute("/genres")({ component: lazyRouteComponent($$splitComponentImporter$7, "component") });
+var $$splitComponentImporter$6 = () => import("./license-NLnO7bur.mjs");
 var Route$8 = createFileRoute("/license")({
-	component: lazyRouteComponent($$splitComponentImporter$8, "component"),
-	head: () => pageHead("License · PHRASEFORM", "Single-producer license for Phraseform Pro. Arrangements are ideas — the music you write is yours.")
+	component: lazyRouteComponent($$splitComponentImporter$6, "component"),
+	head: () => pageHead("License · PHRASEFORM", "Phraseform is a public studio. Free to use. The music you write from a map is yours.")
 });
-var $$splitComponentImporter$7 = () => import("./method-DbelZtp4.mjs");
+var $$splitComponentImporter$5 = () => import("./method-BPALOXIJ.mjs");
 var Route$7 = createFileRoute("/method")({
-	component: lazyRouteComponent($$splitComponentImporter$7, "component"),
+	component: lazyRouteComponent($$splitComponentImporter$5, "component"),
 	head: () => pageHead("Method · PHRASEFORM", "How to write a hardstyle track from a phrase map: kick and reverse bass, drop first, then DJ edges.")
 });
-var $$splitComponentImporter$6 = () => import("./pricing-B7pwPFy4.mjs");
-var Route$6 = createFileRoute("/pricing")({
-	component: lazyRouteComponent($$splitComponentImporter$6, "component"),
-	head: () => pageHead("Pricing · PHRASEFORM", "Free studio with watermarked sheets. Pro is a one-time license for clean export, JSON, and a saved library.")
-});
-var $$splitComponentImporter$5 = () => import("./privacy-C7X_LtM8.mjs");
+var Route$6 = createFileRoute("/pricing")({ beforeLoad: () => {
+	throw redirect({ to: "/" });
+} });
+var $$splitComponentImporter$4 = () => import("./privacy-Dt0_kQ7j.mjs");
 var Route$5 = createFileRoute("/privacy")({
-	component: lazyRouteComponent($$splitComponentImporter$5, "component"),
-	head: () => pageHead("Privacy · PHRASEFORM", "No accounts. Maps and license keys stay in this browser. Payments are handled by the seller’s checkout.")
-});
-var $$splitComponentImporter$4 = () => import("./sell-D4gzGUwK.mjs");
-var Route$4 = createFileRoute("/sell")({
 	component: lazyRouteComponent($$splitComponentImporter$4, "component"),
-	head: () => pageHead("Seller desk · PHRASEFORM", "Set price, paste a checkout link, mint license keys, and fulfill Phraseform Pro orders.")
+	head: () => pageHead("Privacy · PHRASEFORM", "No accounts. Maps stay in this browser. Phraseform does not run ads or checkout.")
 });
-var $$splitComponentImporter$3 = () => import("./sound-Du8oKmat.mjs");
+var Route$4 = createFileRoute("/sell")({ beforeLoad: () => {
+	throw redirect({ to: "/" });
+} });
+var $$splitComponentImporter$3 = () => import("./sound-VyvQi-BW.mjs");
 var Route$3 = createFileRoute("/sound")({
 	component: lazyRouteComponent($$splitComponentImporter$3, "component"),
 	head: () => pageHead("Sound · PHRASEFORM", "Kick, drums, reverse bass, Serum and Spire from Init, and mixing — written for any DAW.")
@@ -996,13 +750,13 @@ var LANE_STATES = [
 	"full",
 	"climax"
 ];
-var $$splitComponentImporter$2 = () => import("./studio-D9zjmThv.mjs");
+var $$splitComponentImporter$2 = () => import("./studio-C0x20vvj.mjs");
 var Route$2 = createFileRoute("/studio")({
 	validateSearch: (search) => ({ genre: isGenreId(search.genre) ? search.genre : void 0 }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
 	head: () => pageHead("Studio · PHRASEFORM", "Generate and edit hardstyle phrase maps. Kick, reverse bass, leads, vocals — by the bar.")
 });
-var $$splitComponentImporter$1 = () => import("./genres.index-CkbvCkrA.mjs");
+var $$splitComponentImporter$1 = () => import("./genres.index-JAZyMGXF.mjs");
 var Route$1 = createFileRoute("/genres/")({
 	component: lazyRouteComponent($$splitComponentImporter$1, "component"),
 	head: () => pageHead("Genres · PHRASEFORM", "Seven hardstyle genre kits: early, nu-style, euphoric, rawstyle, rawphoric, xtra raw, and uptempo.")
@@ -2698,7 +2452,7 @@ function barsToTime(bars, bpm) {
 	const seconds = bars * 4 / bpm * 60;
 	return `${Math.floor(seconds / 60)}:${Math.round(seconds % 60).toString().padStart(2, "0")}`;
 }
-var $$splitComponentImporter = () => import("./genres._id-BfNqt5yQ.mjs");
+var $$splitComponentImporter = () => import("./genres._id-CIaPzN-b.mjs");
 var Route = createFileRoute("/genres/$id")({
 	beforeLoad: ({ params }) => {
 		if (!isGenreId(params.id)) throw notFound();
@@ -2789,4 +2543,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { Sheet as C, cn as D, Button as E, formatMoney as S, SheetTrigger as T, UnlockDialog as _, KEYS_ALL as a, useCommerce as b, barsToTime as c, LANE_IDS as d, LANE_STATES as f, SiteShell as g, PageKicker as h, GENRE_LIST as i, pickKey as l, isGenreId as m, Route as n, KIND_META as o, PHRASE_KINDS as p, GENRES as r, LANE_META as s, router_exports as t, shortKey as u, Input as v, SheetContent as w, LICENSE_TERMS as x, SiteNav as y };
+export { cn as S, SiteNav as _, KEYS_ALL as a, SheetTrigger as b, barsToTime as c, LANE_IDS as d, LANE_STATES as f, SiteShell as g, PageKicker as h, GENRE_LIST as i, pickKey as l, isGenreId as m, Route as n, KIND_META as o, PHRASE_KINDS as p, GENRES as r, LANE_META as s, router_exports as t, shortKey as u, Sheet as v, Button as x, SheetContent as y };

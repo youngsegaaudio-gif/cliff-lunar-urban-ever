@@ -2,15 +2,15 @@ import { i as __toESM } from "../_runtime.mjs";
 import { o as require_jsx_runtime, s as require_react } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { v as useSearch } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Plus, c as FileDown, d as ChevronRight, f as ChevronLeft, i as Sparkles, l as Dices, r as Trash2, s as FolderOpen, u as Copy } from "../_libs/lucide-react.mjs";
-import { n as create, t as persist } from "../_libs/zustand.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { C as Sheet, D as cn, E as Button, T as SheetTrigger, _ as UnlockDialog, a as KEYS_ALL, b as useCommerce, c as barsToTime, d as LANE_IDS, f as LANE_STATES, i as GENRE_LIST, l as pickKey, o as KIND_META, p as PHRASE_KINDS, r as GENRES, s as LANE_META, u as shortKey, w as SheetContent, y as SiteNav } from "./router-DDApkDmv.mjs";
+import { S as cn, _ as SiteNav, a as KEYS_ALL, b as SheetTrigger, c as barsToTime, d as LANE_IDS, f as LANE_STATES, i as GENRE_LIST, l as pickKey, o as KIND_META, p as PHRASE_KINDS, r as GENRES, s as LANE_META, u as shortKey, v as Sheet, x as Button, y as SheetContent } from "./router-D9gwthdb.mjs";
 import { a as SPIRE_FROM_SCRATCH, i as SOUND, n as EQ_ETCH, o as SPIRE_KNOBS, r as SERUM_FROM_SCRATCH, s as phraseSoundTips } from "./init-synth-CXvZTryU.mjs";
+import { n as create, t as persist } from "../_libs/zustand.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
 import { i as Viewport, n as Scrollbar, r as Thumb, t as Root$1 } from "../_libs/radix-ui__react-scroll-area.mjs";
 import { i as SliderTrack, n as SliderRange, r as SliderThumb, t as Slider$1 } from "../_libs/@radix-ui/react-slider+[...].mjs";
 import { n as SwitchThumb, t as Switch$1 } from "../_libs/radix-ui__react-switch.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/studio-D9zjmThv.js
+//#region node_modules/.nitro/vite/services/ssr/assets/studio-C0x20vvj.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function barOffset(track, id) {
@@ -1500,7 +1500,7 @@ function Switch({ className, ...props }) {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SwitchThumb, { className: "pointer-events-none block size-5 translate-x-0.5 rounded-full bg-fg transition-transform data-[state=checked]:translate-x-[22px] data-[state=checked]:bg-accent-fg" })
 	});
 }
-function studioSheet(track, opts) {
+function studioSheet(track) {
 	const g = GENRES[track.genre];
 	const bars = totalBars(track);
 	const lines = [];
@@ -1508,8 +1508,7 @@ function studioSheet(track, opts) {
 	lines.push(`${g.name}  ·  ${track.bpm} BPM  ·  ${track.key}  ·  ${bars} bars  ·  ${barsToTime(bars, track.bpm)}`);
 	if (track.inspiredBy) lines.push(`Bones stolen from ${track.inspiredBy} (form only — write your own notes)`);
 	else lines.push(`Freehand — not chasing one record`);
-	if (opts?.pro) lines.push(`PHRASEFORM Pro${opts.licensee ? `  ·  licensed to ${opts.licensee}` : ""}`);
-	else lines.push("PHRASEFORM Free  ·  buy Pro for a clean studio sheet");
+	lines.push("PHRASEFORM  ·  public studio sheet");
 	lines.push("");
 	lines.push(`Kick: ${g.kick}`);
 	lines.push(`Groove: ${g.groove}`);
@@ -1554,121 +1553,116 @@ function StudioApp() {
 		Promise.resolve(useArranger.persist.rehydrate()).then(() => {
 			if (search.genre) useArranger.getState().setGenre(search.genre);
 		});
-		useCommerce.persist.rehydrate();
 	}, [search.genre]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "flex min-h-dvh flex-col overflow-x-hidden bg-bg text-fg",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteNav, { active: "studio" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(UnlockDialog, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				id: "content",
-				className: "flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "border-b border-border px-4 py-2 md:px-6",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mx-auto flex max-w-[1440px] flex-wrap items-center gap-2",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-								variant: "secondary",
-								size: "sm",
-								onClick: () => generate(),
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, {}), " Generate"]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-								size: "sm",
-								onClick: () => random(),
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dices, {}), " Random track"]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LibraryMenu, {}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExportMenu, {})
-						]
-					})
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mx-auto flex w-full max-w-[1440px] flex-1 flex-col gap-3 p-3 md:p-4",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteNav, { active: "studio" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			id: "content",
+			className: "flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "border-b border-border px-4 py-2 md:px-6",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mx-auto flex max-w-[1440px] flex-wrap items-center gap-2",
 					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GenreRail, {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SettingsRow, {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-							className: "rounded-xl bg-surface px-4 py-3 ring-1 ring-border",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex flex-wrap items-end justify-between gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-									"aria-label": "Track title",
-									className: "w-full max-w-md bg-transparent font-display text-3xl uppercase tracking-wide text-fg outline-none md:text-4xl",
-									value: track.title,
-									onChange: (e) => useArranger.getState().patchTrack({ title: e.target.value })
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-									className: "mt-1 text-sm text-muted",
-									children: [
-										g.name,
-										" · ",
-										track.bpm,
-										" BPM · ",
-										track.key,
-										" · ",
-										bars,
-										" bars ·",
-										" ",
-										barsToTime(bars, track.bpm),
-										track.inspiredBy ? ` · after ${track.inspiredBy}` : " · freehand"
-									]
-								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "max-w-md text-xs text-pretty text-muted",
-									children: g.vibe
-								})]
-							})
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+							variant: "secondary",
+							size: "sm",
+							onClick: () => generate(),
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, {}), " Generate"]
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "grid min-h-0 min-w-0 flex-1 gap-3 lg:grid-cols-[minmax(0,1fr)_360px]",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex min-h-[22rem] min-w-0 flex-col gap-3",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+							size: "sm",
+							onClick: () => random(),
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dices, {}), " Random track"]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LibraryMenu, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExportMenu, {})
+					]
+				})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mx-auto flex w-full max-w-[1440px] flex-1 flex-col gap-3 p-3 md:p-4",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GenreRail, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SettingsRow, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+						className: "rounded-xl bg-surface px-4 py-3 ring-1 ring-border",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-wrap items-end justify-between gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								"aria-label": "Track title",
+								className: "w-full max-w-md bg-transparent font-display text-3xl uppercase tracking-wide text-fg outline-none md:text-4xl",
+								value: track.title,
+								onChange: (e) => useArranger.getState().patchTrack({ title: e.target.value })
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								className: "mt-1 text-sm text-muted",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Timeline, {}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HowToStrip, {}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "lg:hidden",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SoundPanel, {})
-									})
+									g.name,
+									" · ",
+									track.bpm,
+									" BPM · ",
+									track.key,
+									" · ",
+									bars,
+									" bars ·",
+									" ",
+									barsToTime(bars, track.bpm),
+									track.inspiredBy ? ` · after ${track.inspiredBy}` : " · freehand"
 								]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex min-h-0 flex-col gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "lg:hidden",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sheet, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTrigger, {
-										asChild: true,
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-											className: "w-full",
-											children: "Edit selected phrase"
-										})
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SheetContent, {
-										side: "bottom",
-										title: "Phrase",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PhraseDetail, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-											className: "mt-4",
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NextMoves, {})
-										})]
-									})] })
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "hidden min-h-0 flex-col gap-3 lg:flex",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ScrollArea, {
-										className: "max-h-[calc(100dvh-14rem)]",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "flex flex-col gap-3 pr-2",
-											children: [
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PhraseDetail, {}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(NextMoves, {}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SoundPanel, {})
-											]
-										})
-									})
-								})]
+							})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "max-w-md text-xs text-pretty text-muted",
+								children: g.vibe
 							})]
 						})
-					]
-				})]
-			})
-		]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid min-h-0 min-w-0 flex-1 gap-3 lg:grid-cols-[minmax(0,1fr)_360px]",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex min-h-[22rem] min-w-0 flex-col gap-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Timeline, {}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HowToStrip, {}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "lg:hidden",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SoundPanel, {})
+								})
+							]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex min-h-0 flex-col gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "lg:hidden",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sheet, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTrigger, {
+									asChild: true,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										className: "w-full",
+										children: "Edit selected phrase"
+									})
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SheetContent, {
+									side: "bottom",
+									title: "Phrase",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PhraseDetail, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "mt-4",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NextMoves, {})
+									})]
+								})] })
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "hidden min-h-0 flex-col gap-3 lg:flex",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ScrollArea, {
+									className: "max-h-[calc(100dvh-14rem)]",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex flex-col gap-3 pr-2",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PhraseDetail, {}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(NextMoves, {}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SoundPanel, {})
+										]
+									})
+								})
+							})]
+						})]
+					})
+				]
+			})]
+		})]
 	});
 }
 function GenreRail() {
@@ -1912,14 +1906,7 @@ function LibraryMenu() {
 	const saveLibrary = useArranger((s) => s.saveLibrary);
 	const loadLibrary = useArranger((s) => s.loadLibrary);
 	const removeLibrary = useArranger((s) => s.removeLibrary);
-	const pro = useCommerce((s) => s.isPro());
-	const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
 	const save = () => {
-		if (!pro) {
-			setUnlockOpen(true);
-			setOpen(false);
-			return;
-		}
 		saveLibrary();
 		toast.success("Saved to library");
 		setOpen(false);
@@ -1940,7 +1927,7 @@ function LibraryMenu() {
 				children: "Save this arrangement"
 			}), library.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "px-3 py-2 text-xs text-muted",
-				children: "Empty. Pro keeps a named shelf of maps."
+				children: "Empty. Save a map to keep it on this browser."
 			}) : library.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-1 px-1",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
@@ -1974,13 +1961,7 @@ function LibraryMenu() {
 function ExportMenu() {
 	const [open, setOpen] = (0, import_react.useState)(false);
 	const track = useArranger((s) => s.track);
-	const pro = useCommerce((s) => s.isPro());
-	const licensee = useCommerce((s) => s.licensee);
-	const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
-	const sheet = () => studioSheet(track, {
-		pro,
-		licensee
-	});
+	const sheet = () => studioSheet(track);
 	const copy = async (text, label) => {
 		try {
 			await navigator.clipboard.writeText(text);
@@ -2000,14 +1981,6 @@ function ExportMenu() {
 		URL.revokeObjectURL(url);
 		setOpen(false);
 	};
-	const needPro = (fn) => {
-		if (!pro) {
-			setUnlockOpen(true);
-			setOpen(false);
-			return;
-		}
-		fn();
-	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "relative",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
@@ -2021,20 +1994,20 @@ function ExportMenu() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					className: "block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface",
-					onClick: () => copy(sheet(), pro ? "studio sheet" : "watermarked sheet"),
+					onClick: () => copy(sheet(), "studio sheet"),
 					children: "Copy studio sheet"
 				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					className: "block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface",
-					onClick: () => needPro(() => download(sheet(), `${slug(track.title)}.txt`, "text/plain")),
-					children: ["Download .txt", pro ? "" : " · Pro"]
+					onClick: () => download(sheet(), `${slug(track.title)}.txt`, "text/plain"),
+					children: "Download .txt"
 				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					className: "block w-full rounded-md px-3 py-2 text-left text-sm hover:bg-surface",
-					onClick: () => needPro(() => download(jsonSheet(track), `${slug(track.title)}.json`, "application/json")),
-					children: ["Download JSON", pro ? "" : " · Pro"]
+					onClick: () => download(jsonSheet(track), `${slug(track.title)}.json`, "application/json"),
+					children: "Download JSON"
 				})
 			]
 		}) : null]

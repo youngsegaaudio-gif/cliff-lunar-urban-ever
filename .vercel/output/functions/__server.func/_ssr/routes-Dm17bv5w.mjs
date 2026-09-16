@@ -1,7 +1,7 @@
 import { o as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { E as Button, S as formatMoney, b as useCommerce, g as SiteShell, h as PageKicker, i as GENRE_LIST } from "./router-DDApkDmv.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dw3947tx.js
+import { g as SiteShell, h as PageKicker, i as GENRE_LIST, x as Button } from "./router-D9gwthdb.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dm17bv5w.js
 var import_jsx_runtime = require_jsx_runtime();
 var DEMO = [
 	{
@@ -158,23 +158,18 @@ function PhraseMapPreview() {
 	});
 }
 function LandingPage() {
-	const price = useCommerce((s) => s.price);
-	const currency = useCommerce((s) => s.currency);
-	const pro = useCommerce((s) => Boolean(s.licenseKey));
-	const setUnlockOpen = useCommerce((s) => s.setUnlockOpen);
-	const money = formatMoney(price, currency);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SiteShell, {
 		active: "home",
 		width: "wide",
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageKicker, { children: "Hardstyle arrangement studio" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageKicker, { children: "Public hardstyle arrangement studio" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 				className: "mt-3 max-w-3xl font-display text-5xl uppercase leading-[0.95] tracking-wide md:text-7xl",
 				children: "Write the map before you write the kick"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-5 max-w-xl text-base text-pretty text-muted md:text-lg",
-				children: "Most maps steal the bones from a real record — Imaginary, FTS, TOO COLD — then you write your own notes. Looks like a DAW arrange window: 4–8 bar intros, then 16s and 32s, with what actually sits on kick, reverse bass, leads, and vocals."
+				children: "Most maps steal the bones from a real record — Imaginary, FTS, TOO COLD — then you write your own notes. Looks like a DAW arrange window: 4–8 bar intros, then 16s and 32s, with what actually sits on kick, reverse bass, leads, and vocals. Free. No account."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-8 flex flex-wrap gap-2",
@@ -185,19 +180,14 @@ function LandingPage() {
 						to: "/studio",
 						children: "Open the studio"
 					})
-				}), pro ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 					asChild: true,
 					variant: "secondary",
 					size: "lg",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-						to: "/pricing",
-						children: "You're on Pro"
+						to: "/method",
+						children: "How it works"
 					})
-				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-					variant: "secondary",
-					size: "lg",
-					onClick: () => setUnlockOpen(true),
-					children: ["Buy Pro · ", money]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -278,21 +268,17 @@ function LandingPage() {
 				className: "mt-14 rounded-xl bg-surface p-6 ring-1 ring-border md:flex md:items-center md:justify-between md:gap-8",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 					className: "font-display text-3xl uppercase tracking-wide",
-					children: "Pro is a one-time license"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					children: "Public. No paywall."
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-2 max-w-md text-sm text-pretty text-muted",
-					children: [
-						"Free runs the whole studio. Pro removes the watermark, unlocks JSON backups, and keeps a library of maps. ",
-						money,
-						"."
-					]
+					children: "Generate maps, save a library in this browser, export a clean studio sheet. The music you write from it is yours."
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-4 flex shrink-0 flex-col gap-2 md:mt-0",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 						asChild: true,
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-							to: "/pricing",
-							children: "See pricing"
+							to: "/studio",
+							children: "Open the studio"
 						})
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 						asChild: true,

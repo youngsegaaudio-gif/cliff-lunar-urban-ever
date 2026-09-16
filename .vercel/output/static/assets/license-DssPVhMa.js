@@ -1,0 +1,1 @@
+import{t as e}from"./legal-pages-f0lHNQOp.js";var t=e;export{t as component};

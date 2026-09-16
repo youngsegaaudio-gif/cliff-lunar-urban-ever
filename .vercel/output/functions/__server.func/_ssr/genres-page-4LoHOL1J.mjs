@@ -1,8 +1,8 @@
 import { o as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { g as SiteShell, h as PageKicker, i as GENRE_LIST, r as GENRES } from "./router-DDApkDmv.mjs";
+import { g as SiteShell, h as PageKicker, i as GENRE_LIST, r as GENRES } from "./router-D9gwthdb.mjs";
 import { i as SOUND, o as SPIRE_KNOBS } from "./init-synth-CXvZTryU.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/genres-page-TR_xAX77.js
+//#region node_modules/.nitro/vite/services/ssr/assets/genres-page-4LoHOL1J.js
 var import_jsx_runtime = require_jsx_runtime();
 function GenresPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SiteShell, {

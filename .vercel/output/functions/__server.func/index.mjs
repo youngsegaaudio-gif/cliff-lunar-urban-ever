@@ -14,7 +14,7 @@ var install_page_default = "<!DOCTYPE html>\n<html lang=\"en\" class=\"device-de
 var grokOgIdentity = { "site": {
 	"title": "PHRASEFORM",
 	"card": "custom",
-	"description": "Hardstyle phrase maps — kick, reverse bass, leads, and vocals in 8 / 16 / 32-bar DJ phrases.",
+	"description": "Public hardstyle phrase maps — kick, reverse bass, leads, and vocals in 8 / 16 / 32-bar DJ phrases.",
 	"image": "/og.jpg",
 	"banner": "/x-banner.jpg"
 } };

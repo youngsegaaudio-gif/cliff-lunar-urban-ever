@@ -1,0 +1,1 @@
+import{n as e}from"./genres-page-CN_DCv8U.js";var t=e;export{t as component};

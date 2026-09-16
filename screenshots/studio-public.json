@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/studio",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 5157,
+      "bodyTextHash": "d8bb81f0d4e4c201f690141b287676db4e2966dd23e07f7b1305b3b6dc9dd386",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio HOME MET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-public.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Studio · PHRASEFORM",
+      "hasCanvas": false,
+      "bodyTextLen": 3590,
+      "bodyTextHash": "6d8425cad23cf0cfd74087ee0f439c0e02e9f3f8d633f11b2ee7adec2f3c4d26",
+      "bodyTextPrefix": "Skip to content PHRASEFORM Hardstyle arrangement studio Generate",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-public-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/studio-public.json"
+}
